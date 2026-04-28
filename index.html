@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VeloVif - Votre Vendredi Réparation de Vélo</title>
+    <style>
+        /* Base colors from Retro Analog palette adapted for VeloVif brand colors */
+        :root {
+            --color-cream: #F4ECD8;
+            --color-burgundy: #6B2D3E;
+            --color-navy: #2C3E50;
+            --color-sepia: #4A3728;
+            --color-azure: #007FFF; /* Brand primary blue */
+            --color-yellow: #FFDA03; /* Brand accent yellow */
+            --border-radius: 4px;
+            --font-heading: 'Libre Baskerville', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lato&display=swap');
+
+        /* Global reset & styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--color-cream);
+            color: var(--color-sepia);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: normal;
+            color: var(--color-burgundy);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-style: normal;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto 1.25rem auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 1rem 1rem 3rem 1rem;
+        }
+
+        /* Hero section */
+        .hero {
+            background-color: var(--color-navy);
+            color: white;
+            padding: 3rem 1rem 4rem 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: inset 0 0 15px #13243e;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-weight: normal;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            letter-spacing: 0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn-primary {
+            background-color: var(--color-azure);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 0.75rem 2.5rem;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #005fcc;
+            outline: none;
+        }
+
+        /* Section titles with horizontal rule */
+        .section-title {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--color-burgundy);
+            padding-bottom: 0.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+        }
+
+        /* Service list styled as a clean list with spacing */
+        ul.services-list {
+            list-style: none;
+            padding: 0;
+            max-width: 360px;
+            margin: 0 auto 2rem auto;
+        }
+
+        ul.services-list li {
+            background: white;
+            color: var(--color-sepia);
+            margin-bottom: 0.75rem;
+            padding: 0.6rem 1rem;
+            box-shadow: 1px 1px 4px rgba(106,45,62,0.15);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Trust signals container */
+        .trust-container {
+            background-color: var(--color-yellow);
+            max-width: 480px;
+            margin: 2rem auto 3rem auto;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: inset 0 0 8px #c6af00;
+            font-weight: 700;
+            color: var(--color-navy);
+            text-align: center;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+
+        form {
+            background: white;
+            padding: 1.5rem 2rem 2rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 1px 2px 8px rgba(43,56,70,0.15);
+            max-width: 420px;
+            margin: 0 auto 4rem auto;
+            font-family: var(--font-body);
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--color-burgundy);
+            font-size: 0.95rem;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid var(--color-navy);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+        }
+
+        input[type="submit"] {
+            background-color: var(--color-azure);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            background-color: #005fcc;
+            outline: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2rem 1rem 3rem 1rem;
+            }
+            ul.services-list {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            form {
+                padding: 1rem 1rem 1.5rem 1rem;
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero" role="banner">
+            <h1>Your Friday Bike Refresh</h1>
+            <p>VeloVif brings expert bike tune-ups directly to your office every Friday. Optimize your team's ride without taking time away from work.</p>
+            <a href="#booking-form" class="btn-primary" aria-label="Book a Pop-up">Book a Pop-up</a>
+        </section>
+
+        <section aria-labelledby="services-title">
+            <h2 id="services-title" class="section-title">Common Services Offered</h2>
+            <ul class="services-list" role="list">
+                <li>Safety Check: Bolt torque, tire pressure, chain lube, brake inspection (€35 - 25 min)</li>
+                <li>Standard Tune-up: Gear indexing, brake adjustment, drivetrain clean/lube (€55 - 50 min)</li>
+                <li>Full Overhaul: Cable replacement, deep cleaning, wheel truing (€95 - 100 min)</li>
+                <li>Flat Fix: Tube replacement and puncture repair (€15 + parts - 15 min)</li>
+                <li>Brake Bleed (VAE): Hydraulic brake service for electric bikes (€25/brake - 30 min)</li>
+            </ul>
+        </section>
+
+        <section class="trust-container" aria-label="Customer Satisfaction Guarantee">
+            100% Satisfaction Guarantee — Or We Make It Right
+        </section>
+
+        <section id="booking-form" aria-labelledby="booking-title">
+            <h2 id="booking-title" class="section-title">Book a Friday Pop-up for Your Office</h2>
+            <form id="pop-up-booking" method="POST" action="https://app.baget.ai/api/public/databases/0361192b-aff1-4549-ae7b-e1dafbaf9a03/rows" onsubmit="return submitForm(event)">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="Name" required placeholder="Votre nom complet" />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" required placeholder="Votre email professionnel" />
+
+                <label for="company">Company</label>
+                <input type="text" id="company" name="Company" placeholder="Nom de votre entreprise" />
+
+                <input type="submit" value="Book a Pop-up" aria-label="Submit Booking Request" />
+            </form>
+            <p id="form-message" role="alert" style="color: var(--color-burgundy); font-weight: 600; text-align: center;"></p>
+        </section>
+    </main>
+
+    <script>
+        async function submitForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const messageEl = document.getElementById('form-message');
+            const data = {
+                data: {
+                    Name: form.Name.value.trim(),
+                    Email: form.Email.value.trim(),
+                    Company: form.Company.value.trim(),
+                }
+            };
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    messageEl.style.color = 'green';
+                    messageEl.textContent = 'Merci pour votre demande. Nous reviendrons vers vous rapidement.';
+                    form.reset();
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            } catch (error) {
+                messageEl.style.color = 'var(--color-burgundy)';
+                messageEl.textContent = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
